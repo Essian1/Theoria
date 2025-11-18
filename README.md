@@ -1,2 +1,2 @@
-# Aevum-Before-Infinity.github.io
+# Theoria.github.io
 blog

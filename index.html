@@ -2,166 +2,46 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>/// protocol seven ///</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>///</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
-
   body {
-    background: #000;
-    color: #0f0;
-    font-family: 'Share Tech Mono', monospace;
-    margin: 0;
-    padding: 40px;
-    line-height: 1.6;
-    background-image: 
-      linear-gradient(rgba(0,255,0,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,255,0,0.03) 1px, transparent 1px);
-    background-size: 20px 20px;
-    animation: scanlines 12s linear infinite;
+    margin:0; height:100vh; background:#000;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Courier New',monospace;
+    overflow:hidden;
+    animation: lainflicker 6s infinite;
   }
-
-  /* CRT scanlines + faint flicker */
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: repeating-linear-gradient(
-      0deg,
-      rgba(0,0,0,0) 0px,
-      rgba(0,0,0,0.08) 1px,
-      rgba(0,0,0,0) 2px
-    );
-    pointer-events: none;
-    animation: flicker 4s infinite step-end;
+  .portal {
+    text-align:center; color:#ddc;
   }
-
-  @keyframes scanlines {
-    0% { background-position: 0 0; }
-    100% { background-position: 0 1000px; }
-  }
-
-  @keyframes flicker {
-    0%,100% { opacity: 0.99; }
-    50% { opacity: 0.97; }
-  }
-
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    background: rgba(0,15,0,0.3);
-    padding: 40px;
-    border: 1px solid #030;
-    box-shadow: 0 0 20px rgba(0,255,0,0.2);
-  }
-
   h1 {
-    text-align: center;
-    font-size: 2rem;
-    letter-spacing: 8px;
-    color: #0f0;
-    text-shadow: 0 0 10px #0f0;
-    margin-bottom: 60px;
-    animation: pulse 6s infinite;
+    font-size:2.2rem; letter-spacing:10px; color:#f00;
+    text-shadow:0 0 15px #900;
+    margin-bottom:50px;
   }
-
-  h2 {
-    color: #0ff;
-    font-size: 1.3rem;
-    margin-top: 50px;
-    border-bottom: 1px dashed #030;
-    padding-bottom: 5px;
+  input {
+    background:#000; border:1px solid #c33; color:#ddc;
+    padding:10px 20px; font-size:1rem; width:260px;
   }
-
-  .date {
-    color: #080;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
+  input:focus { outline:none; box-shadow:0 0 10px #c33; }
+  .enter a {
+    color:#c33; text-decoration:none; font-size:1rem;
   }
-
-  hr {
-    border: none;
-    border-top: 1px dashed #060;
-    margin: 60px 0;
-  }
-
-  a {
-    color: #0ff;
-    text-decoration: underline dotted;
-  }
-
-  a:hover {
-    background: #0ff;
-    color: #000;
-  }
-
-  footer {
-    text-align: center;
-    margin-top: 100px;
-    color: #060;
-    font-size: 0.8rem;
-  }
-
-  .bear {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    opacity: 0.15;
-    filter: invert(1);
-    pointer-events: none;
-  }
-
-  @keyframes pulse {
-    0%,100% { opacity: 1; }
-    50% { opacity: 0.7; }
+  .enter a:hover { color:#fff; text-shadow:0 0 10px #f00; }
+  @keyframes lainflicker {
+    0%,100% {opacity:1;}
+    50% {opacity:0.97;}
   }
 </style>
 </head>
 <body>
-
-<div class="container">
-  <h1>/// PROTOCOL SEVEN ///</h1>
-
-  <h2>18 nov 2025</h2>
-  <p class="date">23:41:07</p>
-  <p>
-    the wired is quiet tonight.<br>
-    sometimes i hear voices that aren’t there. or maybe they are there and everyone else just stopped listening.
-  </p>
-  <p>
-    let’s all love lain.
-  </p>
-
-  <hr>
-
-  <h2>17 nov 2025</h2>
-  <p class="date">02:14:22</p>
-  <p>
-    i keep dreaming of a bear in a red dress standing in the static between channels.<br>
-    when i wake up the screen is still on and the cursor is blinking like it knows my name.
-  </p>
-
-  <hr>
-
-  <h2>15 nov 2025</h2>
-  <p class="date">19:55:01</p>
-  <p>
-    navis are dying again. no one talks about it on the surface net.<br>
-    someone posted a raw ipv6 knock on knightsofthenet that crashes the protocol stack if you even look at it wrong.<br>
-    i saved it to disk. just in case.
-  </p>
-
-  <hr>
-
-  <!-- add new posts above this line, same format -->
-
-  <footer>
-    "The Wired may be a means to the end of the real world, or it may be the end itself."<br>
-    — no copyright — copy and spread — close the world · open the next
-  </footer>
-</div>
-
-<img src="https://files.catbox.moe/0v0q0e.png" alt="lain bear" class="bear" width="120">
-
+  <div class="portal">
+    <h1>PRESENT DAY</h1>
+    <h1>PRESENT TIME</h1>
+    <form onsubmit="event.preventDefault(); window.location='enter.html'">
+      <input type="password" placeholder="············" autofocus>
+    </form>
+    <div class="enter" style="margin-top:40px;"><a href="enter.html">› enter the wired</a></div>
+  </div>
 </body>
 </html>
